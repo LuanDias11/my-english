@@ -1,29 +1,49 @@
-# My English — Documentação do projeto
+# Estado do projeto — My English
 
-Plataforma web para estudo de inglês para iniciantes, construída com HTML, CSS e JavaScript, usando Supabase para autenticação e dados e Vercel para publicação.
+## Repositório oficial
 
-## Estado desta versão
+O repositório **[LuanDias11/my-english-completo](https://github.com/LuanDias11/my-english-completo)** é a fonte oficial para a manutenção e evolução do My English. O repositório anterior deve ser tratado apenas como referência histórica; novas alterações de desenvolvimento devem partir deste repositório.
 
-Esta versão reproduz o estado acordado do projeto: inclui o ajuste da visualização dos PDFs em dispositivos móveis, com uma opção para abrir o material em tela cheia. **Não inclui a etapa experimental de áudio**, que ficou para depois.
+## Versão de referência
 
-## Estrutura
+A versão de referência é a versão acordada que inclui o ajuste de visualização dos PDFs em dispositivos móveis, com opção para abrir o material em tela cheia. **O protótipo de áudio está fora do escopo desta versão** e não deve substituir o `index.html` oficial.
 
-- `index.html` — aplicação web.
-- `materiais/Aula_1.pdf` até `materiais/Aula_7.pdf` — materiais didáticos referenciados pela aplicação.
-- `docs/` — documentação do projeto.
-- `database/` — scripts SQL históricos/de manutenção, se mantidos no repositório. Eles não são executados automaticamente pelo site.
+Aplicação atualmente publicada: https://my-english-phi.vercel.app
 
-## Publicação
+## Componentes do projeto
 
-O projeto atualmente publicado continua sendo https://my-english-phi.vercel.app. Este repositório novo não deve ser conectado/substituir a publicação antes de conferir a aplicação e os sete PDFs no próprio repositório.
+- `index.html`: interface principal da aplicação.
+- `materiais/Aula_1.pdf` a `materiais/Aula_7.pdf`: materiais de apoio referenciados pelo HTML.
+- `database/`: scripts SQL de referência para manutenção e atualização do conteúdo.
+- `docs/plano-de-ensino.md`: sequência temática e objetivos didáticos.
 
-## Supabase
+## Integrações
 
-A aplicação depende do projeto Supabase configurado no código. Mudanças no banco devem ser feitas separadamente, após revisão e backup. Os scripts SQL são referências de manutenção e **não garantem, por si só, que o estado atual do banco seja idêntico ao conteúdo dos arquivos**.
+### Supabase
 
-## Conferência antes de publicar
+O frontend utiliza o Supabase configurado na aplicação para acessar os dados e os recursos de autenticação. A manutenção do banco é independente dos arquivos deste repositório: scripts SQL precisam ser revisados e executados manualmente no ambiente apropriado. Não presumir que o banco ativo corresponde exatamente aos scripts versionados sem uma conferência explícita.
 
-1. Confirmar que os sete arquivos PDF estão na pasta `materiais/` com os nomes referenciados pelo HTML.
-2. Testar autenticação, listagem de aulas, questões e seção English na Prática.
-3. Testar a abertura dos PDFs em desktop e celular.
-4. Só depois, configurar uma nova implantação na Vercel se essa for a decisão desejada.
+### Vercel
+
+A versão publicada permanece em https://my-english-phi.vercel.app. Atualizações neste repositório, por si só, não alteram a implantação existente. A publicação de uma versão a partir do repositório oficial deve ocorrer somente após a validação dos arquivos e do comportamento da aplicação.
+
+## Pendências conhecidas
+
+- [ ] Transferir para `materiais/` os sete PDFs originais, mantendo exatamente os nomes esperados pelo HTML.
+- [ ] Conferir se os links dos sete PDFs resolvem corretamente no repositório.
+- [ ] Testar autenticação e carregamento das aulas e questões com a configuração real do Supabase.
+- [ ] Testar a seção English na Prática.
+- [ ] Validar a abertura dos PDFs em desktop e celular.
+- [ ] Revisar a configuração de publicação antes de qualquer nova implantação.
+
+## Critérios para considerar a versão pronta para publicação
+
+1. O `index.html` corresponde à versão aprovada e não contém o protótipo de áudio.
+2. Os sete PDFs estão presentes, com nomes e caminhos corretos.
+3. Aulas, questões e English na Prática funcionam com o banco configurado.
+4. A visualização dos materiais foi testada em desktop e dispositivos móveis.
+5. O README e esta documentação refletem o conteúdo realmente presente no repositório.
+
+## Segurança e manutenção
+
+Não versionar senhas, tokens privados ou chaves secretas. Antes de executar scripts SQL, revisar as instruções, confirmar o ambiente de destino e manter um backup apropriado. Os scripts versionados são referências de manutenção; não são executados automaticamente pela aplicação.
