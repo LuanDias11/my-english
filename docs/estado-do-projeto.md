@@ -4,7 +4,7 @@
 
 A plataforma está funcionando corretamente até o estágio atual do desenvolvimento, conforme validado no ambiente publicado: https://my-english-phi.vercel.app
 
-A versão atual inclui o ajuste de visualização dos PDFs em dispositivos móveis, com opção para abrir o material em tela cheia. **O protótipo de áudio não faz parte do projeto atual.**
+A versão atual inclui o ajuste de visualização dos PDFs em dispositivos móveis, com opção para abrir o material em tela cheia.
 
 ## Componentes
 
@@ -31,5 +31,4 @@ A aplicação referencia os arquivos `materiais/Aula_1.pdf` até `materiais/Aula
 
 - Revisar scripts SQL antes de executá-los e manter backup adequado.
 - Não versionar senhas, tokens privados ou chaves secretas.
-- Preservar a versão atual aprovada, sem incorporar o protótipo de áudio.
 - Validar alterações em aulas, questões, English na Prática e materiais antes de publicar.
