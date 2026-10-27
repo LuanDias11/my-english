@@ -63,9 +63,9 @@ A pasta `database/` contém scripts SQL de apoio à manutenção do conteúdo. O
 
 ## Desenvolvimento e escopo atual
 
-O código neste repositório representa a base de desenvolvimento do projeto. A versão de referência inclui o ajuste de visualização de PDFs em dispositivos móveis, com opção para abrir o material em tela cheia. O protótipo de áudio não faz parte do escopo atual.
+O repositório reúne o código-fonte, os materiais didáticos e a documentação do My English. A versão atual inclui o ajuste de visualização dos PDFs em dispositivos móveis, com opção para abrir o material em tela cheia.
 
-Antes de uma nova publicação, valide os recursos integrados e confirme que as alterações preservam o comportamento esperado. A publicação existente não é alterada automaticamente por mudanças nos arquivos deste repositório.
+A aplicação publicada está disponível no link acima. Alterações futuras devem ser testadas para preservar o comportamento esperado.
 
 ## Documentação
 
