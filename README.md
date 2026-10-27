@@ -1,32 +1,21 @@
 # My English 🇬🇧
 
-**Uma plataforma web para apoiar o aprendizado de inglês básico com aulas temáticas, exercícios interativos e materiais de revisão.**
+**Plataforma web de aprendizagem de inglês básico, com aulas temáticas, exercícios interativos e materiais de apoio.**
 
-O **My English** organiza o estudo em uma sequência progressiva de sete aulas, com situações práticas do cotidiano — de apresentações pessoais a viagens e convites. O projeto combina uma interface web leve com dados gerenciados no Supabase.
+O My English foi desenvolvido para organizar o estudo de inglês em uma sequência introdutória e prática, aproximando o conteúdo de situações do dia a dia — como apresentações pessoais, rotina, pedidos em restaurantes, trabalho e viagens.
 
-- **Aplicação publicada:** [my-english-phi.vercel.app](https://my-english-phi.vercel.app)
-- **Repositório oficial:** [LuanDias11/my-english-completo](https://github.com/LuanDias11/my-english-completo)
-
-> Este repositório é a fonte oficial para a manutenção e evolução do My English. O repositório anterior é mantido apenas como referência histórica.
-
-## Objetivos do projeto
-
-- Organizar o conteúdo de inglês básico em aulas temáticas e progressivas.
-- Oferecer exercícios interativos para praticar e revisar o conteúdo.
-- Reunir materiais de apoio em PDF junto à aplicação.
-- Disponibilizar uma seção **English na Prática**, voltada à aplicação do idioma em situações concretas.
-- Manter o conteúdo das aulas e questões estruturado em banco de dados.
+**Aplicação:** https://my-english-phi.vercel.app
 
 ## Funcionalidades
 
-- Aulas organizadas por tema e nível introdutório.
-- Questões interativas com feedback.
-- Conteúdo de aulas e perguntas integrado ao Supabase.
-- Área **English na Prática**.
+- Aulas temáticas organizadas em uma sequência progressiva.
+- Exercícios interativos para praticar e revisar os conteúdos.
+- Conteúdo de aulas e questões integrado ao Supabase.
+- Seção **English na Prática**, com situações de uso do idioma.
 - Materiais didáticos em PDF.
-- Opção de abrir o PDF em tela cheia para facilitar o uso em dispositivos móveis.
+- Opção de abrir os PDFs em tela cheia para facilitar a leitura em dispositivos móveis.
 
-## Conteúdo das aulas
+## Conteúdo didático
 
 | Aula | Tema |
 |---|---|
@@ -38,58 +27,49 @@ O **My English** organiza o estudo em uma sequência progressiva de sete aulas, 
 | 6 | Viagens e aeroporto |
 | 7 | Planos e convites |
 
-Consulte o [plano de ensino](docs/plano-de-ensino.md) para ver os objetivos e a organização didática.
+Veja o [plano de ensino](docs/plano-de-ensino.md) para consultar os objetivos de aprendizagem.
 
-## Tecnologias
+## Tecnologias utilizadas
 
-- **HTML, CSS e JavaScript** — estrutura, estilos e interações da interface.
-- **Supabase** — serviços de dados e autenticação utilizados pela aplicação.
-- **SQL** — scripts de manutenção e atualização do conteúdo.
-- **Vercel** — hospedagem da versão publicada.
+- **HTML, CSS e JavaScript** — interface e interações do usuário.
+- **Supabase** — integração com dados e autenticação.
+- **SQL** — scripts para manutenção e atualização do conteúdo.
+- **Vercel** — hospedagem da aplicação.
 
-## Estrutura do repositório
+## Estrutura do projeto
 
 ```text
 my-english-completo/
 ├── index.html
-├── materiais/
-│   ├── Aula_1.pdf
-│   ├── Aula_2.pdf
-│   ├── Aula_3.pdf
-│   ├── Aula_4.pdf
-│   ├── Aula_5.pdf
-│   ├── Aula_6.pdf
-│   └── Aula_7.pdf
-├── database/
-│   ├── README.md
-│   └── scripts SQL de manutenção
-└── docs/
-    ├── estado-do-projeto.md
-    └── plano-de-ensino.md
+├── materiais/                 # PDFs de apoio das aulas
+├── database/                  # Scripts SQL e instruções de manutenção
+└── docs/                      # Documentação e plano de ensino
 ```
 
-**Nota sobre os materiais:** a aplicação referencia os PDFs pelos caminhos mostrados acima. A transferência dos sete arquivos binários para este repositório ainda está pendente; por isso, a estrutura ilustrada representa a organização pretendida e precisa ser conferida antes de considerar o repositório pronto para uma nova publicação.
+A aplicação espera os arquivos `materiais/Aula_1.pdf` até `materiais/Aula_7.pdf`. Esses arquivos ainda precisam ser transferidos para o repositório; portanto, a estrutura de materiais não está completa neste momento.
 
-## Executar e configurar
+## Executar localmente
 
-1. Clone este repositório.
-2. Sirva o arquivo `index.html` por um servidor HTTP local ou por uma hospedagem estática.
-3. Confira a configuração do Supabase utilizada pela aplicação e valide a autenticação e o carregamento dos dados.
-4. Confirme que os sete PDFs estão presentes em `materiais/` e teste os links dos materiais.
-5. Faça os testes funcionais antes de publicar uma nova versão.
+1. Clone o repositório.
+2. Sirva o `index.html` por um servidor HTTP local ou por uma hospedagem estática.
+3. Verifique a configuração do Supabase utilizada pela aplicação.
+4. Adicione os sete PDFs à pasta `materiais/` e confira os caminhos referenciados no HTML.
+5. Teste autenticação, carregamento de aulas e questões, seção English na Prática e visualização dos PDFs em desktop e celular.
 
-A aplicação depende da configuração do Supabase; abrir apenas o HTML sem os serviços e dados necessários não garante o funcionamento completo.
+Como a aplicação depende da configuração do Supabase, abrir o HTML isoladamente não garante o funcionamento de todos os recursos.
 
-## Banco de dados e scripts SQL
+## Banco de dados
 
-A pasta `database/` reúne scripts de referência para manutenção e atualização do conteúdo. Eles não são executados automaticamente pelo frontend. Antes de executar qualquer script, revise o SQL, compare-o com o estado atual do banco e faça um backup adequado.
+A pasta `database/` contém scripts SQL de apoio à manutenção do conteúdo. Os scripts não são executados automaticamente pela aplicação. Antes de executar qualquer arquivo SQL, revise os comandos, confira o estado atual do banco e mantenha um backup apropriado.
 
-A presença dos scripts neste repositório não significa que o banco Supabase ativo esteja sincronizado automaticamente com eles.
+## Desenvolvimento e escopo atual
 
-## Estado atual
+O código neste repositório representa a base de desenvolvimento do projeto. A versão de referência inclui o ajuste de visualização de PDFs em dispositivos móveis, com opção para abrir o material em tela cheia. O protótipo de áudio não faz parte do escopo atual.
 
-A versão de referência inclui o ajuste de visualização dos PDFs em dispositivos móveis. **O protótipo de áudio não faz parte da versão oficial atual.**
+Antes de considerar o projeto pronto para uma nova publicação, transfira os sete PDFs e valide os recursos integrados. A publicação existente não é alterada automaticamente por mudanças nos arquivos deste repositório.
 
-Antes de conectar este repositório a uma nova implantação, conclua a transferência dos PDFs e valide aulas, questões, seção English na Prática e visualização dos materiais em desktop e celular. A publicação existente não é alterada automaticamente por mudanças neste repositório.
+## Documentação
 
-Veja a [documentação do estado do projeto](docs/estado-do-projeto.md) para acompanhar pendências e critérios de validação.
+- [Estado do projeto e checklist de validação](docs/estado-do-projeto.md)
+- [Plano de ensino](docs/plano-de-ensino.md)
+- [Orientações dos scripts SQL](database/README.md)
