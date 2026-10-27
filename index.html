@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My English — Plataforma de estudos</title>
+<style>
+:root{--navy:#142238;--blue:#3478f6;--pale:#eef5ff;--ink:#172337;--muted:#718096;--line:#e5eaf1;--bg:#f5f7fb;--green:#1d9b63;--red:#d94b55}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:var(--bg);color:var(--ink)}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;border-radius:10px;padding:11px 15px;font-weight:650;background:var(--blue);color:white}button.secondary{background:#eaf0f8;color:#24354d}button.ghost{background:transparent;color:#53657c}button.danger{background:#fff0f0;color:#b4232e}.hidden{display:none!important}
+#auth{min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr;background:white}.auth-hero{padding:8vw;background:linear-gradient(145deg,#142238,#244e89);color:white;display:flex;flex-direction:column;justify-content:center}.brand{font-size:25px;font-weight:800;letter-spacing:-.6px}.auth-hero h1{font-size:clamp(34px,4vw,58px);line-height:1.06;margin:30px 0 15px}.auth-hero p{font-size:17px;color:#d6e3f7;max-width:440px;line-height:1.7}.auth-form-wrap{display:grid;place-items:center;padding:28px}.auth-form{width:min(390px,100%)}h2{letter-spacing:-.6px}.field{display:flex;flex-direction:column;gap:7px;margin:14px 0}.field label{font-size:13px;font-weight:700;color:#53657c}.field input,.field select,.field textarea{padding:12px;border:1px solid #d9e1ec;border-radius:10px;background:white;color:var(--ink);width:100%}.field textarea{min-height:90px;resize:vertical}.muted{color:var(--muted)}.small{font-size:12px;line-height:1.5}.app{display:grid;grid-template-columns:245px 1fr;min-height:100vh}.sidebar{background:var(--navy);color:#dce6f6;padding:22px 14px;display:flex;flex-direction:column;gap:8px}.side-brand{padding:8px 10px 22px;font-size:20px;font-weight:800}.side-brand span{color:#78a8ff}.navbtn{background:transparent;text-align:left;color:#c8d4e7;font-weight:550;padding:12px;border-radius:10px}.navbtn.active,.navbtn:hover{background:#2d69d9;color:white}.side-bottom{margin-top:auto;padding:12px 10px;color:#9aabc4;font-size:12px}.main{min-width:0}.topbar{height:76px;background:white;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 30px;gap:10px}.userchip{display:flex;align-items:center;gap:10px}.avatar{width:38px;height:38px;border-radius:50%;background:#e4edff;color:#2459bd;display:grid;place-items:center;font-weight:800}.content{max-width:1450px;margin:auto;padding:28px 30px 45px}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:1.2px;color:var(--blue);font-weight:800}.pagehead{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:22px}.pagehead h1{margin:5px 0 6px;font-size:clamp(26px,3vw,35px);letter-spacing:-1px}.pagehead p{margin:0;color:var(--muted)}.grid{display:grid;gap:16px}.stats{grid-template-columns:repeat(4,minmax(0,1fr));margin-bottom:20px}.card{background:white;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 4px 18px #17233706;min-width:0}.statlabel{font-size:13px;color:var(--muted)}.statvalue{font-size:29px;font-weight:800;letter-spacing:-1px;margin:8px 0}.statfoot{font-size:12px;color:var(--muted)}.two{grid-template-columns:minmax(0,1.5fr) minmax(280px,1fr)}.sectiontitle{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:15px}.sectiontitle h2{font-size:18px;margin:0}.lesson{display:flex;align-items:center;gap:14px;padding:15px 0;border-bottom:1px solid var(--line)}.lesson:last-child{border:0;padding-bottom:0}.lessonicon{width:44px;height:44px;border-radius:12px;background:#edf4ff;color:#2866d8;display:grid;place-items:center;font-size:20px;flex-shrink:0}.lessontext{flex:1;min-width:0}.lessontext strong{display:block}.lessontext small{display:block;color:var(--muted);margin-top:4px}.pill{display:inline-flex;align-items:center;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:750;background:#eef2f7;color:#5c6b80}.pill.done{background:#e5f8ee;color:#168451}.pill.current{background:#e9f1ff;color:#2866d8}.progress{height:8px;border-radius:20px;background:#e8edf4;overflow:hidden}.progress span{height:100%;display:block;background:linear-gradient(90deg,#3478f6,#48c98c);border-radius:20px;transition:width .25s}.welcome{background:linear-gradient(110deg,#eaf3ff,#f5f9ff);border:1px solid #d9e8ff;border-radius:16px;padding:24px;display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:20px}.welcome h2{margin:0 0 8px;font-size:24px}.welcome p{margin:0;color:#566b87;line-height:1.6}.welcome .emoji{font-size:48px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.tab{background:#edf1f7;color:#53657c}.tab.active{background:var(--blue);color:white}.question{border:1px solid var(--line);border-radius:13px;padding:18px;margin:14px 0}.question p{font-weight:750;margin:0 0 13px}.option{display:flex;gap:10px;align-items:center;padding:11px 12px;border:1px solid var(--line);border-radius:9px;margin:8px 0;cursor:pointer}.option:has(input:checked){background:#edf4ff;border-color:#7eabff}.feedback{border-radius:10px;padding:12px;margin-top:12px;font-size:14px}.feedback.good{background:#e5f8ee;color:#137447}.feedback.bad{background:#fff0f0;color:#a52d38}.wordrow{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);align-items:center}.empty{padding:26px;text-align:center;color:var(--muted)}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:12px;border-bottom:1px solid var(--line);vertical-align:top}th{color:#65758b;font-size:11px;text-transform:uppercase;letter-spacing:.5px}.toast{position:fixed;bottom:20px;right:20px;background:#142238;color:white;padding:12px 16px;border-radius:10px;box-shadow:0 8px 30px #0002;z-index:10}.chart{height:155px;display:flex;align-items:end;gap:12px;padding:18px 5px 0}.barwrap{flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;height:100%;justify-content:end}.bar{width:min(42px,75%);min-height:4px;background:#8eb5ff;border-radius:7px 7px 2px 2px}.barlabel{font-size:10px;color:var(--muted)}.lesson-content .plain-lesson h3{font-size:18px;color:var(--navy);margin:24px 0 9px}.lesson-content .plain-lesson h3:first-child{margin-top:0}.lesson-content .plain-lesson p{margin:9px 0 13px}.lesson-content .plain-lesson ul{padding-left:24px;margin:8px 0 16px}.lesson-content .plain-lesson li{margin:7px 0}.lesson-content .plain-lesson .lesson-section{margin:18px 0}.lesson-content .plain-lesson .lesson-section-title{font-weight:800;color:var(--navy);font-size:17px;margin:20px 0 8px}.lesson-content h3{font-size:18px;color:var(--navy);margin:24px 0 9px}.lesson-content h3:first-child{margin-top:0}.lesson-content p{margin:9px 0 13px}.lesson-content ul,.lesson-content ol{padding-left:24px;margin:8px 0 16px}.lesson-content li{margin:7px 0}.lesson-content b,.lesson-content strong{color:#142238}.pdf-material{margin:18px 0 4px;padding:16px;border:1px solid #d9e8ff;background:#f5f9ff;border-radius:12px}.pdf-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.pdf-open-link{display:inline-flex;align-items:center;justify-content:center;background:var(--blue);color:white;text-decoration:none;border-radius:10px;padding:11px 15px;font-weight:650}.pdf-viewer{margin-top:14px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#f1f4f8}.pdf-viewer iframe{display:block;width:100%;height:min(75vh,850px);min-height:480px;border:0}.pdf-viewer-head{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 12px;background:white;border-bottom:1px solid var(--line)}@media(max-width:620px){.pdf-viewer iframe{height:65vh;min-height:380px}}.adminnote{background:#fff8e8;border:1px solid #f5dfaa;border-radius:10px;padding:12px;color:#755718;font-size:12px;line-height:1.5;margin-bottom:15px}
+@media(max-width:950px){.app{grid-template-columns:78px 1fr}.side-brand{font-size:0;padding:12px 7px 20px}.side-brand:first-letter{font-size:23px}.navbtn{font-size:0;text-align:center;padding:14px 4px}.navbtn::first-letter{font-size:18px}.side-bottom{display:none}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.two{grid-template-columns:1fr}.content{padding:22px 18px}.topbar{padding:0 18px}}
+@media(max-width:620px){#auth{grid-template-columns:1fr}.auth-hero{padding:30px;min-height:250px}.auth-hero h1{font-size:34px;margin:20px 0 8px}.auth-hero p{font-size:14px}.auth-form-wrap{padding:28px}.app{grid-template-columns:1fr}.sidebar{position:sticky;top:0;z-index:4;flex-direction:row;overflow:auto;padding:8px;gap:5px}.side-brand{display:none}.navbtn{white-space:nowrap;font-size:12px;padding:10px}.navbtn::first-letter{font-size:12px}.side-bottom{display:none}.topbar{height:62px}.content{padding:18px 12px}.stats{gap:10px}.card{padding:15px}.statvalue{font-size:24px}.welcome{padding:18px}.welcome .emoji{display:none}.pagehead{align-items:flex-start;flex-direction:column}.wordrow{grid-template-columns:1fr 1fr}.wordrow button{grid-column:1/-1}.tabs{gap:5px}.tab{padding:9px;font-size:12px}}
+ .pdf-only-viewer{width:100%;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:visible;min-width:0}.pdf-mobile-actions{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 12px}.pdf-mobile-actions a{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;background:var(--blue);color:#fff;padding:11px 15px;border-radius:10px;font-weight:700}.pdf-mobile-hint{font-size:13px;color:var(--muted);margin:0 0 10px}.pdf-only-viewer iframe{display:block;width:100%;height:78vh;min-height:560px;border:0;background:#fff;touch-action:pan-y;-webkit-overflow-scrolling:touch}@media(max-width:620px){.pdf-only-viewer{border-radius:10px}.pdf-only-viewer iframe{height:75vh;min-height:480px;touch-action:pan-y}.pdf-mobile-actions a{width:100%}}</style></head>
+<body>
+<div id="auth">
+ <section class="auth-hero"><div class="brand">📘 My English</div><h1>Aprender é construir liberdade.</h1><p>Um passo de cada vez. Estude, pratique e acompanhe sua evolução no inglês.</p><p class="small">Sua sala de estudos pessoal • Do básico à conversação</p></section>
+ <section class="auth-form-wrap"><div class="auth-form">
+  <div id="loginForm"><div class="eyebrow">Bem-vindo de volta</div><h2>Acesse sua conta</h2><p class="muted">Entre para continuar seus estudos.</p><div class="field"><label for="loginEmail">E-mail</label><input id="loginEmail" type="email" placeholder="voce@email.com" autocomplete="username"></div><div class="field"><label for="loginPass">Senha</label><input id="loginPass" type="password" placeholder="Sua senha" autocomplete="current-password"></div><button style="width:100%" onclick="login()">Entrar</button><p class="small muted">Primeira vez aqui? <a href="#" onclick="showRegister();return false">Criar uma conta</a></p></div>
+  <div id="registerForm" class="hidden"><div class="eyebrow">Vamos começar</div><h2>Crie sua conta</h2><p class="muted">Crie seu acesso de aluno.</p><div class="field"><label>Nome</label><input id="regName" placeholder="Seu nome"></div><div class="field"><label>E-mail</label><input id="regEmail" type="email" placeholder="voce@email.com"></div><div class="field"><label>Senha (mínimo 6 caracteres)</label><input id="regPass" type="password" placeholder="Crie uma senha"></div><button style="width:100%" onclick="register()">Criar conta</button><p class="small muted">Já tem conta? <a href="#" onclick="showLogin();return false">Entrar</a></p></div>
+  <p class="small muted" style="margin-top:25px">Sua conta e seu progresso são sincronizados com o My English.</p>
+ </div></section>
+</div>
+<div id="app" class="app hidden">
+ <aside class="sidebar"><div class="side-brand">📘 My <span>English</span></div>
+ <button class="navbtn active" data-page="dashboard" onclick="go('dashboard')">⌂ &nbsp; Início</button>
+ <button class="navbtn" data-page="lessons" onclick="go('lessons')">▤ &nbsp; Aulas</button>
+ <button class="navbtn" data-page="practice" onclick="go('practice')">✓ &nbsp; Exercícios</button>
+ <button class="navbtn" data-page="vocab" onclick="go('vocab')">Aa &nbsp; Vocabulário</button>
+ <button class="navbtn" data-page="progress" onclick="go('progress')">▥ &nbsp; Meu progresso</button>
+ <button class="navbtn" data-page="practiceMedia" onclick="go('practiceMedia')">▶ &nbsp; English na Prática</button>
+ <button class="navbtn hidden" id="adminNav" data-page="teacher" onclick="go('teacher')">⚙ &nbsp; Professor</button>
+ <div class="side-bottom">My English • versão inicial<br>Aprenda no seu ritmo.</div></aside>
+ <main class="main"><header class="topbar"><div><strong id="topTitle">Início</strong><div class="small muted">Seu espaço de aprendizagem</div></div><div class="userchip"><div class="avatar" id="avatar">A</div><div><strong id="userName">Aluno</strong><div class="small muted" id="userRole">Aluno</div></div><button class="ghost" onclick="logout()">Sair</button></div></header>
+ <div class="content" id="view"></div></main>
+</div><div id="toast" class="toast hidden"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script>
+const KEY='myenglish_v1_data';
+const lessons=[
+{id:1,title:'Introdução e verbo to be',level:'Iniciante',duration:'20–30 min',desc:'Cumprimentos, pronomes pessoais e am, is, are.',words:[['Hello','Olá'],['Good morning','Bom dia'],['My name is…','Meu nome é…'],['I am','Eu sou / estou'],['You are','Você é / está'],['Student','Estudante'],['Happy','Feliz'],['Tired','Cansado(a)'],['Brazilian','Brasileiro(a)'],['Nice to meet you','Prazer em conhecer você']],questions:[
+{q:'I ___ Brazilian.',opts:['am','is','are'],a:0,why:'Use am com o pronome I.'},
+{q:'She ___ happy.',opts:['am','is','are'],a:1,why:'Use is com he, she e it.'},
+{q:'They ___ friends.',opts:['am','is','are'],a:2,why:'Use are com we, you e they.'},
+{q:'Qual é a forma negativa de “He is tired”?',opts:['He not is tired.','He isn’t tired.','He aren’t tired.'],a:1,why:'A negativa é he is not ou he isn’t.'},
+{q:'___ you a student?',opts:['Am','Is','Are'],a:2,why:'Em perguntas, are vem antes de you.'},
+{q:'Como dizer “Eu tenho 20 anos” em inglês?',opts:['I have 20 years.','I am 20 years old.','I is 20.'],a:1,why:'Para idade, usamos o verbo to be: I am … years old.'},
+{q:'Qual pronome significa “ela”?',opts:['He','She','They'],a:1,why:'She significa ela.'},
+{q:'Transforme “They are happy” em pergunta.',opts:['They are happy?','Are they happy?','Is they happy?'],a:1,why:'Em perguntas com to be, invertemos verbo e sujeito.'},
+{q:'“Good evening” é usado principalmente…',opts:['Ao chegar à noite','Ao ir dormir','Somente pela manhã'],a:0,why:'Good evening é uma saudação usada à noite; good night é despedida.'},
+{q:'Complete: We ___ friends.',opts:['is','am','are'],a:2,why:'We combina com are.'}
+]}];
+const defaultData={users:[],session:null,progress:{},attempts:[],customLessons:[]};
+function data(){try{return Object.assign({},defaultData,JSON.parse(localStorage.getItem(KEY)||'{}'))}catch{return {...defaultData}}}
+function save(d){localStorage.setItem(KEY,JSON.stringify(d))}
+let D={users:[],session:null,progress:{},attempts:[],customLessons:[]}, currentPage='dashboard', activeLesson=null, quizAnswers={}, quizSubmitted=false;
+function toast(s){let t=document.getElementById('toast');t.textContent=s;t.classList.remove('hidden');setTimeout(()=>t.classList.add('hidden'),2600)}
+function showRegister(){document.getElementById('loginForm').classList.add('hidden');document.getElementById('registerForm').classList.remove('hidden')}
+function showLogin(){document.getElementById('registerForm').classList.add('hidden');document.getElementById('loginForm').classList.remove('hidden')}
+function register(){let name=document.getElementById('regName').value.trim(),email=document.getElementById('regEmail').value.trim().toLowerCase(),pass=document.getElementById('regPass').value,role=document.getElementById('regRole').value;if(!name||!email||pass.length<4)return toast('Preencha os campos e use uma senha com pelo menos 4 caracteres.');if(D.users.some(u=>u.email===email))return toast('Este e-mail já está cadastrado.');let user={id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),name,email,pass,role};D.users.push(user);D.session=user.id;save(D);initApp()}
+function login(){let email=document.getElementById('loginEmail').value.trim().toLowerCase(),pass=document.getElementById('loginPass').value;let u=D.users.find(u=>u.email===email&&u.pass===pass);if(!u)return toast('E-mail ou senha incorretos.');D.session=u.id;save(D);initApp()}
+function logout(){D.session=null;save(D);document.getElementById('app').classList.add('hidden');document.getElementById('auth').classList.remove('hidden')}
+function me(){return D.users.find(u=>u.id===D.session)}
+function initApp(){D=data();let u=me();if(!u){document.getElementById('auth').classList.remove('hidden');document.getElementById('app').classList.add('hidden');return}document.getElementById('auth').classList.add('hidden');document.getElementById('app').classList.remove('hidden');document.getElementById('userName').textContent=u.name;document.getElementById('avatar').textContent=u.name.charAt(0).toUpperCase();document.getElementById('userRole').textContent=u.role==='teacher'?'Professor':'Aluno';document.getElementById('adminNav').classList.toggle('hidden',u.role!=='teacher');go(currentPage)}
+function allLessons(){return D.customLessons||[]}
+function userProgress(){return D.progress[D.session]||{}}
+function stats(){let p=userProgress(),ls=allLessons(),done=ls.filter(l=>p[l.id]?.completed).length,attempts=D.attempts.filter(a=>a.userId===D.session),answered=attempts.reduce((s,a)=>s+a.total,0),correct=attempts.reduce((s,a)=>s+a.score,0);return {done,total:ls.length,answered,correct,rate:answered?Math.round(correct/answered*100):0,attempts}}
+function go(page){if(page==='teacher'&&me()?.role!=='teacher')page='dashboard';currentPage=page;document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',b.dataset.page===page));let names={dashboard:'Início',lessons:'Aulas',practice:'Exercícios',vocab:'Vocabulário',progress:'Meu progresso',practiceMedia:'English na Prática',teacher:'Área do professor'};document.getElementById('topTitle').textContent=names[page]||'My English';let v=document.getElementById('view');if(page==='dashboard')v=renderDashboard(v);if(page==='lessons')v=renderLessons(v);if(page==='practice')v=renderPractice(v);if(page==='vocab')v=renderVocab(v);if(page==='progress')v=renderProgress(v);if(page==='practiceMedia')v=renderPracticeMedia(v);if(page==='teacher')v=renderTeacher(v)}
+function renderDashboard(v){let s=stats(),p=userProgress(),ls=allLessons();v.innerHTML=`<div class="pagehead"><div><div class="eyebrow">Seu aprendizado, no seu ritmo</div><h1>Olá, ${esc(me().name.split(' ')[0])} 👋</h1><p>Um pouco de prática hoje já faz diferença.</p></div><button onclick="go('lessons')">Continuar estudando →</button></div>
+<div class="welcome"><div><div class="eyebrow">Sua próxima etapa</div><h2>${esc(ls[0].title)}</h2><p>${esc(ls[0].desc)}<br>Comece pelos conceitos básicos e avance questão por questão.</p><div style="margin-top:16px"><button onclick="startLesson(${ls[0].id})">Abrir aula →</button></div></div><div class="emoji">📘</div></div>
+<div class="grid stats"><div class="card"><div class="statlabel">Aulas concluídas</div><div class="statvalue">${s.done}<span class="muted" style="font-size:15px"> / ${s.total}</span></div><div class="progress"><span style="width:${s.total?s.done/s.total*100:0}%"></span></div></div><div class="card"><div class="statlabel">Questões respondidas</div><div class="statvalue">${s.answered}</div><div class="statfoot">Somando suas tentativas</div></div><div class="card"><div class="statlabel">Taxa de acerto</div><div class="statvalue">${s.rate}%</div><div class="statfoot">Seu aproveitamento geral</div></div><div class="card"><div class="statlabel">Tentativas</div><div class="statvalue">${s.attempts.length}</div><div class="statfoot">Questionários finalizados</div></div></div>
+<div class="grid two"><div class="card"><div class="sectiontitle"><h2>Seu plano de estudos</h2><button class="ghost" onclick="go('lessons')">Ver todas →</button></div>${ls.map((l,i)=>`<div class="lesson"><div class="lessonicon">${p[l.id]?.completed?'✓':'📖'}</div><div class="lessontext"><strong>${esc(l.title)}</strong><small>${esc(l.desc)}</small></div><span class="pill ${p[l.id]?.completed?'done':i===0?'current':''}">${p[l.id]?.completed?'Concluída':i===0?'Começar':'Disponível'}</span></div>`).join('')}</div>
+<div class="card"><div class="sectiontitle"><h2>Seu progresso</h2><span class="pill">Geral</span></div><div style="display:flex;align-items:center;gap:20px;margin:18px 0"><div style="width:112px;height:112px;border-radius:50%;background:conic-gradient(#3478f6 ${s.total?s.done/s.total*100:0}%,#e9eef5 0);display:grid;place-items:center;flex-shrink:0"><div style="background:white;width:88px;height:88px;border-radius:50%;display:grid;place-items:center;font-size:21px;font-weight:800">${s.total?Math.round(s.done/s.total*100):0}%</div></div><div><strong>${s.done} de ${s.total} aulas</strong><p class="muted small">Continue praticando para consolidar o que aprendeu.</p></div></div><button class="secondary" onclick="go('progress')">Ver relatório</button><hr style="border:0;border-top:1px solid var(--line);margin:20px 0"><strong>Estude um pouco por dia</strong><p class="muted small">Leia a explicação, responda às questões e diga as frases em voz alta.</p></div></div>`;return v}
+function renderLessons(v){let p=userProgress();v.innerHTML=`<div class="pagehead"><div><div class="eyebrow">Trilha de aprendizagem</div><h1>Aulas</h1><p>Conteúdo organizado para você construir sua base no inglês.</p></div></div><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">${allLessons().map((l,i)=>`<div class="card"><div style="display:flex;justify-content:space-between;gap:8px"><span class="pill">${esc(l.level||'Iniciante')}</span><span class="pill ${p[l.id]?.completed?'done':''}">${p[l.id]?.completed?'Concluída':'Não iniciada'}</span></div><div class="lessonicon" style="margin:18px 0">📘</div><h2 style="font-size:19px">${esc(l.title)}</h2><p class="muted" style="line-height:1.6">${esc(l.desc)}</p><div class="small muted">⏱ ${esc(l.duration||'15–20 min')} · ${(l.questions||[]).length} questões</div><div style="margin-top:18px"><button onclick="startLesson('${l.id}')">${p[l.id]?.completed?'Revisar aula':'Estudar aula'} →</button></div></div>`).join('')}</div>`;return v}
+function startLesson(id){activeLesson=id;quizAnswers={};quizSubmitted=false;currentPage='lessonDetail';document.querySelectorAll('.navbtn').forEach(b=>b.classList.remove('active'));let l=allLessons().find(x=>x.id===id);document.getElementById('topTitle').textContent=l?.title||'Aula';renderLessonDetail(document.getElementById('view'))}
+function renderLessonDetail(v){let l=allLessons().find(x=>x.id===activeLesson);if(!l)return go('lessons');let p=userProgress();v.innerHTML=`<div class="pagehead"><div><div class="eyebrow">Aula • ${esc(l.level||'Iniciante')}</div><h1>${esc(l.title)}</h1><p>${esc(l.desc)}</p></div><button class="secondary" onclick="go('lessons')">← Voltar às aulas</button></div><div class="tabs"><button class="tab active" onclick="lessonTab('study',this)">📖 Estudo</button><button class="tab" onclick="lessonTab('quiz',this)">✓ Exercícios (${l.questions.length})</button><button class="tab" onclick="lessonTab('vocab',this)">Aa Vocabulário</button></div><div id="lessonTabContent"></div>`;lessonTab('study',document.querySelector('.tab'))}
+const lessonPdfFiles=[
+ 'materiais/Aula_1.pdf',
+ 'materiais/Aula_2.pdf',
+ 'materiais/Aula_3.pdf',
+ 'materiais/Aula_4.pdf',
+ 'materiais/Aula_5.pdf',
+ 'materiais/Aula_6.pdf',
+ 'materiais/Aula_7.pdf'
+];
+function lessonPdfPath(lesson){
+ const ordered=allLessons();
+ const index=ordered.findIndex(item=>String(item.id)===String(lesson?.id));
+ return index>=0&&index<lessonPdfFiles.length?lessonPdfFiles[index]:null;
+}
+function toggleLessonPdf(){
+ const frame=document.getElementById('lessonPdfViewer');
+ if(!frame)return;
+ const isHidden=frame.classList.contains('hidden');
+ frame.classList.toggle('hidden',!isHidden);
+ const btn=document.getElementById('toggleLessonPdfBtn');
+ if(btn)btn.textContent=isHidden?'Ocultar material PDF':'Visualizar material PDF';
+ if(isHidden)frame.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function lessonTab(tab,btn){document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b===btn));let l=allLessons().find(x=>x.id===activeLesson),c=document.getElementById('lessonTabContent');if(tab==='study'){const pdf=lessonPdfPath(l);c.innerHTML=pdf?`<div class="pdf-only-viewer"><div class="pdf-mobile-actions"><a href="${pdf}" target="_blank" rel="noopener">Abrir PDF em tela cheia ↗</a></div><p class="pdf-mobile-hint">No celular, se a rolagem abaixo não funcionar, toque em “Abrir PDF em tela cheia” para navegar por todas as páginas.</p><iframe src="${pdf}#toolbar=1&navpanes=0&view=FitH" title="Material de estudo da aula" loading="eager" scrolling="yes"></iframe></div>`:`<div class="card">PDF não disponível para esta aula.</div>`}else if(tab==='vocab'){c.innerHTML=`<div class="card"><h2>Vocabulário da aula</h2>${l.words.map(w=>`<div class="wordrow"><strong>${esc(w[0])}</strong><span class="muted">${esc(w[1])}</span><button class="secondary" onclick="speak(${JSON.stringify(w[0])})">🔊 Ouvir</button></div>`).join('')}</div>`}else renderQuiz(c,l)}
+function renderQuiz(c,l){c.innerHTML=`<div class="card"><div class="sectiontitle"><div><div class="eyebrow">Prática da aula</div><h2>Teste o que você aprendeu</h2></div><span class="pill">${l.questions.length} questões</span></div><p class="muted">Escolha uma resposta por questão. Ao finalizar, você verá a correção e a explicação.</p><div id="quizQs">${l.questions.map((q,i)=>`<div class="question"><p>${i+1}. ${esc(q.q)}</p>${q.opts.map((o,j)=>`<label class="option"><input type="radio" name="q${i}" value="${j}" ${quizAnswers[i]===j?'checked':''} ${quizSubmitted?'disabled':''} onchange="quizAnswers[${i}]=${j}"><span>${esc(o)}</span></label>`).join('')}${quizSubmitted?`<div class="feedback ${quizAnswers[i]===q.a?'good':'bad'}">${quizAnswers[i]===q.a?'Correto!':'Resposta correta: '+esc(q.opts[q.a])}<br>${esc(q.why)}</div>`:''}</div>`).join('')}</div>${quizSubmitted?`<div class="feedback ${l.questions.every((q,i)=>quizAnswers[i]===q.a)?'good':' '}"><strong>Resultado: ${l.questions.filter((q,i)=>quizAnswers[i]===q.a).length} de ${l.questions.length} (${Math.round(l.questions.filter((q,i)=>quizAnswers[i]===q.a).length/l.questions.length*100)}%)</strong><br>${l.questions.every((q,i)=>quizAnswers[i]===q.a)?'Excelente! Você acertou todas.':'Revise as explicações e tente novamente para fixar o conteúdo.'}</div><button onclick="retryQuiz()">Tentar novamente</button> <button class="secondary" onclick="go('progress')">Ver progresso</button>`:`<button onclick="submitQuiz()">Corrigir respostas</button>`}</div>`}
+function submitQuiz(){let l=allLessons().find(x=>x.id===activeLesson);let unanswered=l.questions.filter((q,i)=>quizAnswers[i]===undefined).length;if(unanswered)return toast(`Responda às ${unanswered} questão(ões) restantes.`);quizSubmitted=true;let score=l.questions.filter((q,i)=>quizAnswers[i]===q.a).length;D.attempts.push({userId:D.session,lessonId:l.id,score,total:l.questions.length,date:new Date().toISOString()});if(!D.progress[D.session])D.progress[D.session]={};let p=D.progress[D.session][l.id]||{best:0,completed:false};p.best=Math.max(p.best,score);p.completed=p.completed||score/l.questions.length>=.7;D.progress[D.session][l.id]=p;save(D);renderLessonDetail(document.getElementById('view'));lessonTab('quiz',document.querySelectorAll('.tab')[1]);toast('Respostas corrigidas e progresso salvo neste navegador.')}
+function retryQuiz(){quizAnswers={};quizSubmitted=false;renderLessonDetail(document.getElementById('view'));lessonTab('quiz',document.querySelectorAll('.tab')[1])}
+function renderPractice(v){v.innerHTML=`<div class="pagehead"><div><div class="eyebrow">Fixação</div><h1>Exercícios</h1><p>Escolha uma aula para praticar e receber correção imediata.</p></div></div><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(250px,1fr))">${allLessons().map(l=>`<div class="card"><h2>${esc(l.title)}</h2><p class="muted">${l.questions.length} questões com explicação de cada resposta.</p><button onclick="startLesson('${l.id}');setTimeout(()=>lessonTab('quiz',document.querySelectorAll('.tab')[1]),0)">Começar exercício →</button></div>`).join('')}</div>`;return v}
+function renderVocab(v){let words=allLessons().flatMap(l=>l.words);v.innerHTML=`<div class="pagehead"><div><div class="eyebrow">Palavras e expressões</div><h1>Vocabulário</h1><p>Leia, escute a pronúncia e pratique a tradução.</p></div></div><div class="card"><div class="field"><label>Buscar palavra</label><input id="wordSearch" placeholder="Ex.: happy, hello..." oninput="filterWords()"></div><div id="wordList">${words.map(w=>wordHTML(w)).join('')}</div></div>`;return v}
+function wordHTML(w){return `<div class="wordrow" data-word="${esc((w[0]+' '+w[1]).toLowerCase())}"><strong>${esc(w[0])}</strong><span class="muted">${esc(w[1])}</span><button class="secondary" onclick="speak(${JSON.stringify(w[0])})">🔊 Ouvir</button></div>`}
+function filterWords(){let q=document.getElementById('wordSearch').value.toLowerCase();document.querySelectorAll('#wordList .wordrow').forEach(r=>r.style.display=r.dataset.word.includes(q)?'grid':'none')}
+function speak(t){if(!('speechSynthesis'in window))return toast('Áudio não disponível neste navegador.');let u=new SpeechSynthesisUtterance(t);u.lang='en-US';speechSynthesis.speak(u)}
+function renderProgress(v){let s=stats(),p=userProgress(),ls=allLessons(),ats=s.attempts;v.innerHTML=`<div class="pagehead"><div><div class="eyebrow">Seu desempenho</div><h1>Meu progresso</h1><p>Acompanhe o que já estudou e o que pode revisar.</p></div></div><div class="grid stats"><div class="card"><div class="statlabel">Aulas concluídas</div><div class="statvalue">${s.done}/${s.total}</div><div class="progress"><span style="width:${s.total?s.done/s.total*100:0}%"></span></div></div><div class="card"><div class="statlabel">Questões respondidas</div><div class="statvalue">${s.answered}</div></div><div class="card"><div class="statlabel">Respostas corretas</div><div class="statvalue">${s.correct}</div></div><div class="card"><div class="statlabel">Aproveitamento</div><div class="statvalue">${s.rate}%</div></div></div><div class="grid two"><div class="card"><div class="sectiontitle"><h2>Desempenho por tentativa</h2></div>${ats.length?`<div class="chart">${ats.slice(-8).map((a,i)=>`<div class="barwrap"><div class="bar" title="${Math.round(a.score/a.total*100)}%" style="height:${Math.max(5,a.score/a.total*100)}%"></div><div class="barlabel">${i+1}</div></div>`).join('')}</div><div class="small muted">Cada barra representa uma tentativa; a altura indica a porcentagem de acertos.</div>`:'<div class="empty">Ainda não há tentativas registradas. Faça o primeiro exercício para ver seu gráfico.</div>'}</div><div class="card"><h2>Status das aulas</h2>${ls.map(l=>`<div class="lesson"><div class="lessontext"><strong>${esc(l.title)}</strong><small>Melhor resultado: ${p[l.id]?.best!==undefined?`${p[l.id].best}/${l.questions.length}`:'Ainda não iniciado'}</small></div><span class="pill ${p[l.id]?.completed?'done':''}">${p[l.id]?.completed?'Concluída':'Em andamento'}</span></div>`).join('')}</div></div><div class="card" style="margin-top:16px"><h2>Histórico de tentativas</h2>${ats.length?`<div class="tablewrap"><table><thead><tr><th>Data</th><th>Aula</th><th>Resultado</th><th>Aproveitamento</th></tr></thead><tbody>${ats.slice().reverse().map(a=>`<tr><td>${new Date(a.date).toLocaleString('pt-BR')}</td><td>${esc(allLessons().find(l=>l.id===a.lessonId)?.title||'Aula')}</td><td>${a.score}/${a.total}</td><td>${Math.round(a.score/a.total*100)}%</td></tr>`).join('')}</tbody></table></div>`:'<div class="empty">Seu histórico aparecerá aqui.</div>'}</div>`;return v}
+async function renderTeacher(v){
+ v.innerHTML='<div class="card"><p>Carregando alunos e desempenho do Supabase...</p></div>';
+ try{
+  const {data:profiles,error:profilesError}=await sb.from('profiles').select('id,full_name,role').eq('role','student').order('full_name');
+  if(profilesError)throw profilesError;
+  const {data:allAttempts,error:attemptsError}=await sb.from('attempts').select('id,user_id,lesson_id,score,total_questions,completed_at').order('completed_at',{ascending:false});
+  if(attemptsError)throw attemptsError;
+  const profilesList=profiles||[];
+  D.users=profilesList.map(p=>({id:p.id,name:p.full_name||'Aluno sem nome',email:p.id,role:p.role}));
+  D.attempts=(allAttempts||[]).map(a=>({userId:a.user_id,lessonId:a.lesson_id,score:a.score??0,total:a.total_questions??0,date:a.completed_at||new Date().toISOString()}));
+  D.progress={};
+  for(const student of D.users){
+   D.progress[student.id]={};
+   for(const lesson of allLessons()){
+    const studentAttempts=D.attempts.filter(a=>a.userId===student.id&&a.lessonId===lesson.id);
+    if(studentAttempts.length){
+     D.progress[student.id][lesson.id]={
+      best:Math.max(...studentAttempts.map(a=>a.score)),
+      completed:studentAttempts.some(a=>a.total>0&&a.score/a.total>=0.7)
+     };
+    }
+   }
+  }
+ }catch(e){
+  console.error(e);
+  v.innerHTML=`<div class="pagehead"><div><div class="eyebrow">Administração</div><h1>Área do professor</h1><p>Não foi possível carregar os alunos do Supabase.</p></div></div><div class="card"><strong>Erro ao consultar alunos ou tentativas.</strong><p class="muted small">${esc(e?.message||'Verifique as políticas RLS das tabelas profiles e attempts.')}</p><p class="muted small">A consulta precisa permitir que professores leiam os perfis de alunos e as tentativas. Não desative o RLS; configure uma política que valide o papel de professor.</p></div>`;
+  return v;
+ }
+ let students=D.users.filter(u=>u.role==='student');v.innerHTML=`<div class="pagehead"><div><div class="eyebrow">Administração</div><h1>Área do professor</h1><p>Gerencie os alunos e adicione conteúdos para a trilha de estudos.</p></div></div><div class="adminnote"><strong>Nota do protótipo:</strong> este painel demonstra o fluxo. Como os dados ficam no navegador, as contas e os resultados não são compartilhados entre dispositivos. A autenticação não é segura para uso público até conectarmos um backend.</div><div class="grid two"><div class="card"><div class="sectiontitle"><h2>Alunos cadastrados neste navegador</h2><span class="pill">${students.length}</span></div>${students.length?`<div class="tablewrap"><table><thead><tr><th>Aluno</th><th>ID do aluno</th><th>Aulas</th><th>Questões respondidas</th></tr></thead><tbody>${students.map(u=>{let up=D.progress[u.id]||{},done=allLessons().filter(l=>up[l.id]?.completed).length,at=D.attempts.filter(a=>a.userId===u.id).reduce((s,a)=>s+a.total,0);return `<tr><td>${esc(u.name)}</td><td><code>${esc(u.id.slice(0,8))}…</code></td><td>${done}/${allLessons().length}</td><td>${at}</td></tr>`}).join('')}</tbody></table></div>`:'<div class="empty">Nenhum aluno cadastrado ainda. Crie uma conta de aluno para testar.</div>'}</div><div class="card"><h2>Adicionar uma aula</h2><p class="muted small">Crie uma aula simples com perguntas de múltipla escolha. Ela ficará disponível neste navegador.</p><div class="field"><label>Título da aula</label><input id="newTitle" placeholder="Ex.: Artigos a e an"></div><div class="field"><label>Descrição</label><textarea id="newDesc" placeholder="O que o aluno vai aprender?"></textarea></div><div class="field"><label>Pergunta de múltipla escolha</label><input id="newQ" placeholder="Ex.: I ___ a student."></div><div class="field"><label>Alternativas (separe por ponto e vírgula)</label><input id="newOpts" placeholder="am;is;are"></div><div class="field"><label>Alternativa correta (escreva exatamente como acima)</label><input id="newCorrect" placeholder="am"></div><div class="field"><label>Explicação da resposta</label><input id="newWhy" placeholder="Use am com I."></div><button onclick="addLesson()">Salvar aula</button></div></div><div class="card" style="margin-top:16px"><h2>Conteúdos cadastrados</h2>${(D.customLessons||[]).length?(D.customLessons||[]).map(l=>`<div class="lesson"><div class="lessonicon">📘</div><div class="lessontext"><strong>${esc(l.title)}</strong><small>${esc(l.desc)}</small></div><button class="danger" onclick="deleteLesson(${l.id})">Excluir</button></div>`).join(''):'<p class="muted">Você ainda não criou aulas adicionais.</p>'}</div>`;return v}
+function addLesson(){let title=document.getElementById('newTitle').value.trim(),desc=document.getElementById('newDesc').value.trim(),q=document.getElementById('newQ').value.trim(),opts=document.getElementById('newOpts').value.split(';').map(x=>x.trim()).filter(Boolean),correct=document.getElementById('newCorrect').value.trim(),why=document.getElementById('newWhy').value.trim();if(!title||!desc||!q||opts.length<2||!opts.includes(correct))return toast('Preencha os campos e confira a alternativa correta.');let id=Math.max(1,...allLessons().map(l=>Number(l.id)||0))+1;D.customLessons.push({id,title,desc,level:'Iniciante',duration:'15 min',words:[],questions:[{q,opts,a:opts.indexOf(correct),why:why||'Revise a explicação da aula.'}]});save(D);toast('Aula adicionada!');go('teacher')}
+function deleteLesson(id){D.customLessons=D.customLessons.filter(l=>l.id!==id);save(D);go('teacher')}
+function table(rows){return `<div class="tablewrap"><table>${rows.map((r,i)=>`<tr>${r.map(c=>i===0?`<th>${esc(c)}</th>`:`<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</table></div>`}
+
+function renderLessonContent(raw){
+  const input = String(raw ?? '').trim();
+  const allowed = new Set(['p','h3','ul','ol','li','b','strong','i','em','br']);
+  const hasHtml = /<\/?(p|h3|ul|ol|li|b|strong|i|em|br)\s*>/i.test(input);
+  if (hasHtml) {
+    const tokenRegex = /<\/?([a-zA-Z0-9]+)\s*\/?>/g;
+    let result = '', last = 0, match;
+    while ((match = tokenRegex.exec(input)) !== null) {
+      result += esc(input.slice(last, match.index));
+      const tag = match[1].toLowerCase(), token = match[0];
+      if (allowed.has(tag)) {
+        if (/^<\//.test(token)) result += `</${tag}>`;
+        else result += tag === 'br' ? '<br>' : `<${tag}>`;
+      } else result += esc(token);
+      last = tokenRegex.lastIndex;
+    }
+    result += esc(input.slice(last));
+    return result;
+  }
+
+  // Legacy lessons 1–2 are plain text; structure them into the same heading/list style.
+  let text = input.replace(/\r\n?/g, '\n').replace(/[ \t]+/g, ' ');
+  const headings = [
+    'OBJETIVO', 'COMO ESTUDAR', 'CUMPRIMENTOS E APRESENTAÇÕES',
+    'PRONOMES PESSOAIS', 'VERBO TO BE', 'FRASES AFIRMATIVAS',
+    'FRASES NEGATIVAS', 'FRASES INTERROGATIVAS', 'EXEMPLO DE DIÁLOGO',
+    'EXEMPLO DE DIALOGO', 'NÚMEROS EM INGLÊS', 'NUMEROS EM INGLES',
+    'COMO FALAR A IDADE', 'PAÍSES E NACIONALIDADES', 'PAISES E NACIONALIDADES',
+    'INFORMAÇÕES PESSOAIS', 'INFORMACOES PESSOAIS', 'PERGUNTAS PESSOAIS',
+    'ATENÇÃO', 'ATENCAO', 'RESUMO', 'VOCABULÁRIO', 'VOCABULARIO',
+    'ERROS COMUNS', 'PRATIQUE', 'PRÁTICA', 'PRATICA'
+  ];
+  for (const heading of headings) {
+    const escaped = heading.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    // Catch section headings with optional numbering, even when stored inline.
+    const re = new RegExp('(?:^|\\s)(\\d+\\.\\s*)?(' + escaped + ')(?=\\s|:)', 'gi');
+    text = text.replace(re, '\n@@SECTION@@$1$2 ');
+  }
+  const chunks = text.split(/\n@@SECTION@@/).map(s => s.trim()).filter(Boolean);
+  const blocks = chunks.map(chunk => {
+    const m = chunk.match(/^(?:(\d+)\.\s*)?([^:]{2,75}?)(?:\s*:\s*|\s+)([\s\S]*)$/);
+    if (m && headings.some(h => h.toLowerCase() === m[2].trim().toLowerCase())) {
+      const title = (m[1] ? m[1] + '. ' : '') + m[2].trim();
+      return `<section class="lesson-section"><h3>${esc(title)}</h3><p>${formatLegacyBody(m[3])}</p></section>`;
+    }
+    return `<p>${formatLegacyBody(chunk)}</p>`;
+  });
+  return `<div class="plain-lesson">${blocks.join('')}</div>`;
+}
+function formatLegacyBody(raw){
+  let s = esc(String(raw ?? '').trim());
+  // Improve readability for inline numbered examples and dialogues without changing wording.
+  s = s.replace(/\s+(?=\d+\.\s)/g, '<br><br>');
+  s = s.replace(/\s+([•·])\s+/g, '<br>• ');
+  s = s.replace(/\s+(A:|B:|Tradução:)/g, '<br><b>$1</b>');
+  return s;
+}
+
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+
+
+const SUPABASE_URL='https://vukmjkiockywwlwhxcju.supabase.co';
+const SUPABASE_KEY='sb_publishable_rePSdZK3i7LZ1b4YVHTwUA_9C1t6vPm';
+const sb=window.supabase?.createClient(SUPABASE_URL,SUPABASE_KEY);
+let currentUser=null;
+function safeError(e){console.error(e);toast(e?.message||'Não foi possível concluir a operação.');}
+me=function(){return currentUser};
+register=async function(){
+ if(!sb)return toast('Não foi possível carregar a biblioteca Supabase. Verifique sua conexão.');
+ const name=document.getElementById('regName').value.trim(),email=document.getElementById('regEmail').value.trim(),password=document.getElementById('regPass').value;
+ if(!name||!email||password.length<6)return toast('Informe nome, e-mail e senha com pelo menos 6 caracteres.');
+ const {data,error}=await sb.auth.signUp({email,password,options:{data:{full_name:name}}});
+ if(error)return safeError(error);
+ if(!data.session){showLogin();return toast('Cadastro enviado. Confirme seu e-mail antes de entrar.');}
+ await loadApp();
+};
+login=async function(){
+ if(!sb)return toast('Biblioteca Supabase indisponível.');
+ const email=document.getElementById('loginEmail').value.trim(),password=document.getElementById('loginPass').value;
+ const {error}=await sb.auth.signInWithPassword({email,password});
+ if(error)return safeError(error);
+ await loadApp();
+};
+logout=async function(){await sb.auth.signOut();currentUser=null;D={users:[],session:null,progress:{},attempts:[],customLessons:[]};document.getElementById('app').classList.add('hidden');document.getElementById('auth').classList.remove('hidden');};
+async function loadApp(){
+ try{
+ const {data:{user},error:authError}=await sb.auth.getUser();if(authError)throw authError;
+ if(!user){document.getElementById('app').classList.add('hidden');document.getElementById('auth').classList.remove('hidden');return;}
+ const {data:profile,error:pe}=await sb.from('profiles').select('id,full_name,role').eq('id',user.id).single();if(pe)throw pe;
+ currentUser={id:user.id,email:user.email,name:profile.full_name||user.user_metadata?.full_name||user.email.split('@')[0],role:profile.role};
+ D.session=user.id;
+ const {data:rows,error:le}=await sb.from('lessons').select('id,title,description,content,level,position,published').order('position');if(le)throw le;
+ const ids=(rows||[]).map(l=>l.id);
+ let questions=[];
+ if(ids.length){const {data,error}=await sb.from('questions').select('id,lesson_id,prompt,options,correct_index,explanation,position').in('lesson_id',ids).order('position');if(error)throw error;questions=data||[];}
+ D.customLessons=(rows||[]).map(l=>({id:l.id,title:l.title,desc:l.description,content:l.content,level:l.level,duration:'15–20 min',words:[],questions:questions.filter(q=>q.lesson_id===l.id).map(q=>({id:q.id,q:q.prompt,opts:q.options,a:q.correct_index,why:q.explanation}))}));
+ const {data:attempts,error:ae}=await sb.from('attempts').select('*').eq('user_id',user.id);if(ae)throw ae;
+ D.attempts=(attempts||[]).map(a=>({userId:a.user_id,lessonId:a.lesson_id,score:a.score??0,total:a.total_questions??0,date:a.created_at||new Date().toISOString()}));
+ D.progress={[user.id]:{}};
+ for(const l of D.customLessons){const aa=D.attempts.filter(a=>a.lessonId===l.id);if(aa.length){const best=Math.max(...aa.map(a=>a.score));D.progress[user.id][l.id]={best,completed:aa.some(a=>a.total>0&&a.score/a.total>=.7)};}}
+ initApp();
+ }catch(e){safeError(e);}
+}
+initApp=function(){let u=me();if(!u){document.getElementById('auth').classList.remove('hidden');document.getElementById('app').classList.add('hidden');return;}document.getElementById('auth').classList.add('hidden');document.getElementById('app').classList.remove('hidden');document.getElementById('userName').textContent=u.name;document.getElementById('avatar').textContent=u.name.charAt(0).toUpperCase();document.getElementById('userRole').textContent=u.role==='teacher'?'Professor':'Aluno';document.getElementById('adminNav').classList.toggle('hidden',u.role!=='teacher');go(currentPage)};
+submitQuiz=async function(){
+ const l=allLessons().find(x=>x.id===activeLesson);if(!l||!l.questions.length)return toast('Esta aula ainda não tem questões.');
+ const unanswered=l.questions.filter((q,i)=>quizAnswers[i]===undefined).length;if(unanswered)return toast(`Responda às ${unanswered} questão(ões) restantes.`);
+ const score=l.questions.filter((q,i)=>quizAnswers[i]===q.a).length;
+ const {data,error}=await sb.rpc('submit_lesson_attempt',{p_lesson_id:l.id,p_answers:l.questions.map((q,i)=>({question_id:q.id,answer_index:quizAnswers[i]}))});
+ if(error)return safeError(error);
+ quizSubmitted=true;await loadApp();quizSubmitted=true;renderLessonDetail(document.getElementById('view'));lessonTab('quiz',document.querySelectorAll('.tab')[1]);toast('Exercício corrigido e progresso salvo no Supabase!');
+};
+let teacherStudentsCache=[];
+let teacherAttemptsCache=[];
+renderStudentDetail=function(studentId){
+  const student=teacherStudentsCache.find(st=>st.id===studentId);
+  if(!student)return toast('Aluno não encontrado. Atualize o painel e tente novamente.');
+  const attempts=teacherAttemptsCache.filter(a=>a.user_id===studentId);
+  const totalQuestions=attempts.reduce((sum,a)=>sum+Number(a.total_questions||0),0);
+  const totalCorrect=attempts.reduce((sum,a)=>sum+Number(a.score||0),0);
+  const lessonName=id=>allLessons().find(l=>String(l.id)===String(id))?.title||'Aula';
+  const v=document.getElementById('view');
+  v.innerHTML=`<div class="pagehead"><div><div class="eyebrow">Acompanhamento individual</div><h1>${esc(student.full_name||'Aluno sem nome')}</h1><p>Desempenho e tentativas registradas no Supabase.</p></div><button class="secondary" onclick="go('teacher')">← Voltar ao painel</button></div>
+  <div class="grid stats"><div class="card"><div class="statlabel">Tentativas</div><div class="statvalue">${attempts.length}</div></div><div class="card"><div class="statlabel">Questões respondidas</div><div class="statvalue">${totalQuestions}</div></div><div class="card"><div class="statlabel">Acertos</div><div class="statvalue">${totalCorrect}</div></div><div class="card"><div class="statlabel">Aproveitamento geral</div><div class="statvalue">${totalQuestions?Math.round(totalCorrect/totalQuestions*100):0}%</div></div></div>
+  <div class="card"><div class="sectiontitle"><h2>Histórico de tentativas</h2><span class="pill">${attempts.length}</span></div>${attempts.length?`<div class="tablewrap"><table><thead><tr><th>Aula</th><th>Resultado</th><th>Aproveitamento</th></tr></thead><tbody>${attempts.map(a=>{const total=Number(a.total_questions||0),score=Number(a.score||0);return `<tr><td>${esc(lessonName(a.lesson_id))}</td><td>${score}/${total}</td><td>${total?Math.round(score/total*100):0}%</td></tr>`}).join('')}</tbody></table></div>`:'<div class="empty">Este aluno ainda não possui tentativas registradas.</div>'}</div>`;
+};
+renderTeacher=async function(v){
+  v.innerHTML='<div class="card"><p>Carregando alunos, tentativas e aulas do Supabase...</p></div>';
+  try{
+    const [{data:profiles,error:profilesError},{data:attemptRows,error:attemptsError}] = await Promise.all([
+      sb.from('profiles').select('id,full_name,role').eq('role','student').order('full_name'),
+      sb.from('attempts').select('id,user_id,lesson_id,score,total_questions')
+    ]);
+    if(profilesError) throw profilesError;
+    if(attemptsError) throw attemptsError;
+    const students=profiles||[];
+    const attempts=attemptRows||[];
+    teacherStudentsCache=students;
+    teacherAttemptsCache=attempts;
+    const totalAttempts=attempts.length;
+    const totalQuestions=attempts.reduce((sum,a)=>sum+Number(a.total_questions||0),0);
+    const totalCorrect=attempts.reduce((sum,a)=>sum+Number(a.score||0),0);
+    const overallRate=totalQuestions?Math.round(totalCorrect/totalQuestions*100):0;
+    const lessonName=id=>allLessons().find(l=>String(l.id)===String(id))?.title||'Aula';
+    v.innerHTML=`<div class="pagehead"><div><div class="eyebrow">Administração</div><h1>Área do professor</h1><p>Acompanhe os alunos e seus resultados registrados no Supabase.</p></div></div>
+    <div class="grid stats">
+      <div class="card"><div class="statlabel">Alunos cadastrados</div><div class="statvalue">${students.length}</div></div>
+      <div class="card"><div class="statlabel">Tentativas registradas</div><div class="statvalue">${totalAttempts}</div></div>
+      <div class="card"><div class="statlabel">Questões respondidas</div><div class="statvalue">${totalQuestions}</div></div>
+      <div class="card"><div class="statlabel">Taxa geral de acerto</div><div class="statvalue">${overallRate}%</div></div>
+    </div>
+    <div class="card" style="margin-bottom:16px"><div class="sectiontitle"><h2>Alunos cadastrados</h2><span class="pill">${students.length} aluno(s)</span></div>
+    ${students.length?`<div class="tablewrap"><table><thead><tr><th>Aluno</th><th>ID</th><th>Tentativas</th><th>Questões</th><th>Acertos</th><th>Aproveitamento</th></tr></thead><tbody>${students.map(student=>{
+      const sa=attempts.filter(a=>a.user_id===student.id);
+      const tq=sa.reduce((sum,a)=>sum+Number(a.total_questions||0),0);
+      const sc=sa.reduce((sum,a)=>sum+Number(a.score||0),0);
+      return `<tr><td><button class="ghost" style="padding:0;color:var(--blue)" onclick="renderStudentDetail('${student.id}')">${esc(student.full_name||'Aluno sem nome')} ↗</button></td><td><code>${esc(student.id.slice(0,8))}…</code></td><td>${sa.length}</td><td>${tq}</td><td>${sc}</td><td>${tq?Math.round(sc/tq*100):0}%</td></tr>`;
+    }).join('')}</tbody></table></div>`:'<div class="empty">Nenhum aluno cadastrado ainda.</div>'}</div>
+    <div class="card" style="margin-bottom:16px"><div class="sectiontitle"><h2>Histórico de tentativas</h2><span class="pill">${attempts.length}</span></div>
+    ${attempts.length?`<div class="tablewrap"><table><thead><tr><th>Data</th><th>Aluno</th><th>Aula</th><th>Resultado</th><th>Aproveitamento</th></tr></thead><tbody>${attempts.map(a=>{
+      const student=students.find(st=>st.id===a.user_id);
+      const total=Number(a.total_questions||0),score=Number(a.score||0);
+      return `<tr><td>Data indisponível</td><td>${esc(student?.full_name||'Aluno')}</td><td>${esc(lessonName(a.lesson_id))}</td><td>${score}/${total}</td><td>${total?Math.round(score/total*100):0}%</td></tr>`;
+    }).join('')}</tbody></table></div>`:'<div class="empty">Ainda não há tentativas registradas.</div>'}</div>
+    <div class="grid two"><div class="card"><h2>Nova aula</h2><div class="field"><label>Título</label><input id="newTitle" placeholder="Ex.: Verb to be"></div><div class="field"><label>Descrição</label><textarea id="newDesc"></textarea></div><div class="field"><label>Conteúdo da aula</label><textarea id="newContent" rows="7" placeholder="Digite o conteúdo didático"></textarea></div><div class="field"><label>Pergunta</label><input id="newQ"></div><div class="field"><label>Alternativas (separadas por ponto e vírgula)</label><input id="newOpts" placeholder="am;is;are"></div><div class="field"><label>Alternativa correta (texto exato)</label><input id="newCorrect"></div><div class="field"><label>Explicação</label><input id="newWhy"></div><button onclick="addLesson()">Salvar aula e pergunta</button></div>
+    <div class="card"><h2>Aulas cadastradas</h2>${allLessons().map(l=>`<div class="lesson"><div class="lessontext"><strong>${esc(l.title)}</strong><small>${l.questions.length} pergunta(s)</small></div></div>`).join('')||'<p>Nenhuma aula ainda.</p>'}<p class="small muted">Os dados exibidos acima são consultados no Supabase e respeitam as políticas de acesso.</p></div></div>`;
+    return v;
+  }catch(e){
+    console.error(e);
+    v.innerHTML=`<div class="pagehead"><div><div class="eyebrow">Administração</div><h1>Área do professor</h1><p>Não foi possível carregar os dados dos alunos.</p></div></div><div class="card"><strong>Erro ao consultar perfis ou tentativas.</strong><p class="muted small">${esc(e?.message||'Verifique as políticas de leitura das tabelas profiles e attempts.')}</p><p class="muted small">Não desative o RLS. A política deve permitir que professores consultem os perfis dos alunos e suas tentativas.</p></div>`;
+    return v;
+  }
+};
+let mediaCatalogCache=[];
+let mediaActivity=null, mediaQuestions=[], mediaAnswers={}, mediaSubmitted=false;
+async function renderPracticeMedia(v){
+ v.innerHTML='<div class="card"><p>Carregando recomendações e atividades...</p></div>';
+ try{
+  const [{data:recs,error:re}, {data:acts,error:ae}] = await Promise.all([
+   sb.from('recommendations').select('id,title,creator,category,level,description,learning_goals,media_url,position').eq('published',true).order('position'),
+   sb.from('recommendation_activities').select('id,recommendation_id,title,instructions,position').eq('published',true).order('position')
+  ]);
+  if(re) throw re; if(ae) throw ae;
+  mediaCatalogCache=(recs||[]).map(r=>({...r,activities:(acts||[]).filter(a=>a.recommendation_id===r.id)}));
+  const categoryLabel={music:'Música',series:'Série',movie:'Filme'};
+  const cards=mediaCatalogCache.map(r=>`<div class="card"><div style="display:flex;justify-content:space-between;gap:10px;align-items:start"><span class="pill">${categoryLabel[r.category]||'Conteúdo'}</span><span class="pill">${r.level==='beginner'?'Iniciante':r.level==='intermediate'?'Intermediário':'Avançado'}</span></div><h2 style="margin:14px 0 5px">${esc(r.title)}</h2><p class="muted small" style="margin-top:0">${esc(r.creator||'')}</p><p style="line-height:1.6">${esc(r.description)}</p><div class="small muted">Foco: ${esc((r.learning_goals||[]).join(' · '))}</div>${r.media_url?`<p style="margin:14px 0"><a href="${esc(r.media_url)}" target="_blank" rel="noopener noreferrer">Abrir fonte para assistir/ouvir ↗</a></p>`:''}<div style="margin-top:14px">${r.activities.length?r.activities.map(a=>`<button style="margin:4px 5px 4px 0" onclick="startMediaActivity('${a.id}')">${esc(a.title)} →</button>`).join(''):'<span class="small muted">Atividade em preparação.</span>'}</div></div>`).join('');
+  v.innerHTML=`<div class="pagehead"><div><div class="eyebrow">Listening · Vocabulary · Real English</div><h1>English na Prática</h1><p>Aprenda com músicas, filmes e séries. Abra uma fonte autorizada e depois pratique com atividades originais.</p></div></div><div class="welcome"><div><div class="eyebrow">Como estudar</div><h2>Assista ou ouça com um objetivo</h2><p>1. Abra o conteúdo. 2. Preste atenção no tema e nas palavras-chave. 3. Responda às questões e acompanhe seu resultado.</p></div><div class="emoji">🎧</div></div><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">${cards||'<div class="card empty">Nenhuma recomendação publicada ainda.</div>'}</div><div class="card" style="margin-top:16px"><div class="sectiontitle"><h2>Meu histórico de atividades</h2><button class="secondary" onclick="loadMediaHistory()">Atualizar histórico</button></div><div id="mediaHistory"><p class="muted small">Carregue seu histórico para ver os resultados anteriores.</p></div></div>`;
+  loadMediaHistory();
+ }catch(e){console.error(e);v.innerHTML=`<div class="pagehead"><div><div class="eyebrow">Listening · Vocabulary · Real English</div><h1>English na Prática</h1><p>Não foi possível carregar o catálogo.</p></div></div><div class="card"><strong>Erro ao consultar o catálogo de atividades.</strong><p class="muted small">${esc(e?.message||'Verifique se o SQL da área English na Prática foi executado no Supabase.')}</p></div>`;}
+}
+async function startMediaActivity(activityId){
+ try{
+  const {data:rows,error}=await sb.rpc('get_recommendation_activity_questions',{p_activity_id:activityId});
+  if(error)throw error;
+  mediaActivity=activityId;mediaQuestions=rows||[];mediaAnswers={};mediaSubmitted=false;
+  if(!mediaQuestions.length)return toast('Esta atividade ainda não tem perguntas.');
+  renderMediaQuiz(document.getElementById('view'));
+ }catch(e){console.error(e);toast(e?.message||'Não foi possível abrir a atividade.');}
+}
+function renderMediaQuiz(v,result=null){
+ const activity=mediaCatalogCache.flatMap(r=>r.activities.map(a=>({...a,recommendation:r}))).find(a=>a.id===mediaActivity);
+ v.innerHTML=`<div class="pagehead"><div><div class="eyebrow">English na Prática</div><h1>${esc(activity?.title||'Atividade')}</h1><p>${esc(activity?.recommendation?.title||'')} · ${esc(activity?.recommendation?.creator||'')}</p></div><button class="secondary" onclick="go('practiceMedia')">← Voltar ao catálogo</button></div><div class="card"><p>${esc(activity?.instructions||'Responda às questões.')}</p><div class="small muted">${mediaQuestions.length} questões · As respostas corretas são validadas no servidor.</div>${mediaQuestions.map((q,i)=>`<div class="question"><p>${i+1}. ${esc(q.prompt)}</p>${(q.options||[]).map((o,j)=>`<label class="option"><input type="radio" name="mq${i}" value="${j}" ${mediaAnswers[i]===j?'checked':''} ${mediaSubmitted?'disabled':''} onchange="mediaAnswers[${i}]=${j}"><span>${esc(o)}</span></label>`).join('')}${mediaSubmitted&&q.explanation?`<div class="feedback">${esc(q.explanation)}</div>`:''}</div>`).join('')}${mediaSubmitted?`<div class="feedback good"><strong>Resultado salvo: ${result?.score??0}/${result?.total_questions??mediaQuestions.length} (${result?.percentage??0}%).</strong></div><button onclick="go('practiceMedia')">Voltar ao catálogo</button>`:`<button onclick="submitMediaActivity()">Finalizar atividade</button>`}</div>`;
+}
+async function submitMediaActivity(){
+ const missing=mediaQuestions.filter((q,i)=>mediaAnswers[i]===undefined).length;
+ if(missing)return toast(`Responda às ${missing} questão(ões) restantes.`);
+ const answers=mediaQuestions.map((q,i)=>({question_id:q.id,answer_index:mediaAnswers[i]}));
+ try{
+  const {data,error}=await sb.rpc('submit_recommendation_activity',{p_activity_id:mediaActivity,p_answers:answers});
+  if(error)throw error;
+  mediaSubmitted=true;renderMediaQuiz(document.getElementById('view'),data);toast('Atividade concluída e resultado salvo!');
+ }catch(e){console.error(e);toast(e?.message||'Não foi possível salvar seu resultado.');}
+}
+async function loadMediaHistory(){
+ const box=document.getElementById('mediaHistory');if(!box)return;box.innerHTML='<p class="muted small">Carregando histórico...</p>';
+ try{
+  const {data:attempts,error}=await sb.from('activity_attempts').select('id,activity_id,score,total_questions,percentage,completed_at').eq('user_id',currentUser.id).order('completed_at',{ascending:false});
+  if(error)throw error;
+  const acts=mediaCatalogCache.flatMap(r=>r.activities.map(a=>({...a,recommendation:r})));
+  box.innerHTML=attempts?.length?`<div class="tablewrap"><table><thead><tr><th>Data</th><th>Conteúdo</th><th>Atividade</th><th>Resultado</th><th>Aproveitamento</th></tr></thead><tbody>${attempts.map(a=>{const act=acts.find(x=>x.id===a.activity_id);return `<tr><td>${a.completed_at?new Date(a.completed_at).toLocaleString('pt-BR'):'—'}</td><td>${esc(act?.recommendation?.title||'Conteúdo')}</td><td>${esc(act?.title||'Atividade')}</td><td>${Number(a.score||0)}/${Number(a.total_questions||0)}</td><td>${Number(a.percentage||0)}%</td></tr>`}).join('')}</tbody></table></div>`:'<div class="empty">Você ainda não concluiu atividades nesta seção.</div>';
+ }catch(e){console.error(e);box.innerHTML=`<p class="small muted">Não foi possível carregar o histórico: ${esc(e?.message||'erro de consulta')}.</p>`;}
+}
+addLesson=async function(){
+ if(me()?.role!=='teacher')return toast('Acesso restrito ao professor.');
+ const title=document.getElementById('newTitle').value.trim(),description=document.getElementById('newDesc').value.trim(),content=document.getElementById('newContent').value.trim(),prompt=document.getElementById('newQ').value.trim(),options=document.getElementById('newOpts').value.split(';').map(x=>x.trim()).filter(Boolean),correct=document.getElementById('newCorrect').value.trim(),explanation=document.getElementById('newWhy').value.trim();
+ if(!title||!prompt||options.length<2||!options.includes(correct))return toast('Preencha o título, a pergunta e as alternativas corretamente.');
+ const {data:l,error}=await sb.from('lessons').insert({title,description,content,level:'beginner',published:true,position:allLessons().length+1}).select('id').single();if(error)return safeError(error);
+ const {error:qe}=await sb.from('questions').insert({lesson_id:l.id,prompt,options,correct_index:options.indexOf(correct),explanation,position:1});if(qe)return safeError(qe);
+ await loadApp();go('teacher');toast('Aula salva no Supabase!');
+};
+deleteLesson=function(){toast('Exclusão desabilitada nesta versão para evitar apagar progresso dos alunos.');};
+if(sb){sb.auth.onAuthStateChange((event)=>{if(event==='SIGNED_OUT')logoutView();});loadApp();}else toast('Erro ao carregar Supabase. Abra com conexão à internet.');
+function logoutView(){currentUser=null;document.getElementById('app').classList.add('hidden');document.getElementById('auth').classList.remove('hidden');}
+
+</script></body></html>
