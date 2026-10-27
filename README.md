@@ -46,15 +46,14 @@ my-english-completo/
 └── docs/                      # Documentação e plano de ensino
 ```
 
-A aplicação espera os arquivos `materiais/Aula_1.pdf` até `materiais/Aula_7.pdf`. Esses arquivos ainda precisam ser transferidos para o repositório; portanto, a estrutura de materiais não está completa neste momento.
+Os sete materiais didáticos estão versionados em `materiais/`, com os nomes esperados pela aplicação.
 
 ## Executar localmente
 
 1. Clone o repositório.
 2. Sirva o `index.html` por um servidor HTTP local ou por uma hospedagem estática.
 3. Verifique a configuração do Supabase utilizada pela aplicação.
-4. Adicione os sete PDFs à pasta `materiais/` e confira os caminhos referenciados no HTML.
-5. Teste autenticação, carregamento de aulas e questões, seção English na Prática e visualização dos PDFs em desktop e celular.
+4. Teste autenticação, carregamento de aulas e questões, seção English na Prática e visualização dos PDFs em desktop e celular.
 
 Como a aplicação depende da configuração do Supabase, abrir o HTML isoladamente não garante o funcionamento de todos os recursos.
 
@@ -66,7 +65,7 @@ A pasta `database/` contém scripts SQL de apoio à manutenção do conteúdo. O
 
 O código neste repositório representa a base de desenvolvimento do projeto. A versão de referência inclui o ajuste de visualização de PDFs em dispositivos móveis, com opção para abrir o material em tela cheia. O protótipo de áudio não faz parte do escopo atual.
 
-Antes de considerar o projeto pronto para uma nova publicação, transfira os sete PDFs e valide os recursos integrados. A publicação existente não é alterada automaticamente por mudanças nos arquivos deste repositório.
+Antes de uma nova publicação, valide os recursos integrados e confirme que as alterações preservam o comportamento esperado. A publicação existente não é alterada automaticamente por mudanças nos arquivos deste repositório.
 
 ## Documentação
 
