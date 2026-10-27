@@ -25,7 +25,7 @@ A aplicação está publicada em https://my-english-phi.vercel.app. A plataforma
 
 ## Organização dos materiais no repositório
 
-A aplicação referencia os arquivos `materiais/Aula_1.pdf` até `materiais/Aula_7.pdf`. A transferência desses sete PDFs para o repositório ainda precisa ser concluída para que o código-fonte e os materiais estejam reunidos no mesmo lugar. Essa pendência de versionamento não deve ser confundida com uma falha funcional da plataforma publicada.
+A aplicação referencia os arquivos `materiais/Aula_1.pdf` até `materiais/Aula_7.pdf`. Os sete PDFs estão versionados nesta pasta com os nomes esperados pelo HTML. O código-fonte e os materiais de apoio estão reunidos no repositório.
 
 ## Boas práticas de manutenção
 
